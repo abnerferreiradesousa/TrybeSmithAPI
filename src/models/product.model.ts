@@ -14,4 +14,19 @@ export default class ProductModel {
     const [rows] = result;
     return rows as Product[];
   }
+
+  public async create(name: string, amount: string): Promise<Product> {
+    const result = await this.connection
+      .execute(
+        'INSERT INTO Trybesmith.Products (name, amount) VALUES (?, ?)',
+        [name, amount],
+      );
+    console.log(result);
+      
+    return {
+      id: 1,
+      name,
+      amount,
+    };
+  }
 }
