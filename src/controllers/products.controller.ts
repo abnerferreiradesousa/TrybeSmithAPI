@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import ProductService from '../services/products.service';
 
-class BooksController {
+class ProductsController {
   constructor(private productService = new ProductService()) { }
 
   public getAll = async (_req: Request, res: Response) => {
@@ -17,4 +17,4 @@ class BooksController {
   };
 }
 
-export default BooksController;
+export default ProductsController;
