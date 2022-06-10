@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
-import NewUser from '../interfaces/user.interface';
+// import NewUser from '../interfaces/user.interface';
 
-const generateToken = (payload: NewUser) => {
+const generateToken = (payload: { username: string, id: number }) => {
   // const jwtConfig = {
   //   algorithm: 'HS256',
   // }; 

@@ -1,4 +1,4 @@
-import { Pool, ResultSetHeader } from 'mysql2/promise';
+import { Pool, ResultSetHeader, RowDataPacket } from 'mysql2/promise';
 import User from '../interfaces/user.interface';
 
 export default class ProductModel {
@@ -8,28 +8,28 @@ export default class ProductModel {
     this.connection = connection;
   }
 
-  public async create({ username, classe, password, level }: User): Promise<boolean> {
-    await this.connection
+  public async create({ username, classe, password, level }: User): Promise<number> {
+    const result = await this.connection
       .execute<ResultSetHeader>(
       'INSERT INTO Trybesmith.Users (username, classe, password, level) VALUES (?, ?, ?, ?)',
       [username, classe, password, level],
     );
-    return true;
+    const [rows] = result;
+    const { insertId } = rows;
+    return insertId;
   }
 
-  // public async getUserByName(name: string) {
-  //   const result = await this.connection.execute(
-  //     'SELECT * FROM Trybesmith.Users WHERE username = ?',
-  //     [name],
-  //   );
-  //   console.log(result);
-    
-  //   const [user] = result;
-  //   return user;
-  // }
+  public async getUserByName(name: string) {
+    const result = await this.connection.execute<RowDataPacket[]>(
+      'SELECT * FROM Trybesmith.Users WHERE username = ?',
+      [name],
+    );
+    const [user] = result;
+    return user;
+  }
 
-  // public async login(userData: User) {
-  //   const user = this.getUserByName(userData.username);
-  //   return user;
-  // }
+  public async login(userData: { username: string, password: string }) {
+    const user = await this.getUserByName(userData.username);
+    return user;
+  }
 }

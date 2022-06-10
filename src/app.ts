@@ -6,6 +6,7 @@ import OrdersController from './controllers/orders.controller';
 import validationProduct from './middlewares/products.middleware';
 import validationUsers from './middlewares/users.middleware';
 import ErrorHandler from './interfaces/error.interface';
+import validationLogin from './middlewares/login.middleware';
 
 const app = express();
 
@@ -33,10 +34,11 @@ app.get(
   ordersController.getAll,
 );
 
-// app.post(
-//   '/login',
-//   usersController.login,
-// );
+app.post(
+  '/login',
+  validationLogin,
+  usersController.login,
+);
 
 app.use((err: ErrorHandler, _req: Request, res: Response, _next: NextFunction) => {
   if (err.status) {
