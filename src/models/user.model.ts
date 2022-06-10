@@ -16,4 +16,20 @@ export default class ProductModel {
     );
     return true;
   }
+
+  // public async getUserByName(name: string) {
+  //   const result = await this.connection.execute(
+  //     'SELECT * FROM Trybesmith.Users WHERE username = ?',
+  //     [name],
+  //   );
+  //   console.log(result);
+    
+  //   const [user] = result;
+  //   return user;
+  // }
+
+  // public async login(userData: User) {
+  //   const user = this.getUserByName(userData.username);
+  //   return user;
+  // }
 }

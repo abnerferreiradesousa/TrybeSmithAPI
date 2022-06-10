@@ -9,6 +9,11 @@ class UsersController {
     const token = await this.usersService.create(req.body);
     res.status(StatusCodes.CREATED).json({ token });
   };
+
+  // public login = async (req: Request, res: Response) => {
+  //   const token = await this.usersService.login(req.body);
+  //   res.status(StatusCodes.CREATED).json({ token });
+  // };
 }
 
 export default UsersController;

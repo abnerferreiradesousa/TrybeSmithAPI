@@ -1,4 +1,4 @@
-import { Pool } from 'mysql2/promise';
+import { Pool, RowDataPacket } from 'mysql2/promise';
 import Order from '../interfaces/order.interface';
 
 export default class OrderModel {
@@ -10,15 +10,18 @@ export default class OrderModel {
 
   public async getAll(): Promise<Order[]> {
     const result = await this.connection
-      .execute(`SELECT PR.id as productsIds, O.id, O.userId FROM Trybesmith.Orders AS O
+      .execute<RowDataPacket[]>(
+      `SELECT PR.id as productsIds, O.id, O.userId FROM Trybesmith.Orders AS O
       JOIN Trybesmith.Products AS PR
-      ON O.id = PR.orderId;`);
+      ON O.id = PR.orderId;`,
+    );
     const [rows] = result;
-    // const serielize = rows.map((order: Order) => ({
-    //   id: order.id,
-    //   userId: order.userId,
-    //   productsIds: [...order.productsIds],
-    // }));
-    return rows as Order[];
+    
+    const serielize = rows.map((order) => ({
+      id: order.id,
+      userId: order.userId,
+      productsIds: [order.productsIds],
+    }));
+    return serielize as Order[];
   }
 }
