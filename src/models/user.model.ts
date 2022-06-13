@@ -27,9 +27,4 @@ export default class ProductModel {
     const [user] = result;
     return user;
   }
-
-  public async login(userData: { username: string, password: string }) {
-    const user = await this.getUserByName(userData.username);
-    return user;
-  }
 }

@@ -22,9 +22,13 @@ class UserService {
   }
 
   public async login(user: { username: string, password: string }): Promise<string> {
-    const userData = await this.model.login(user);
+    const userData = await this.model.getUserByName(user.username);
     console.log(userData);
     
+    if (userData.length === 0) {
+      throw errorMessage(StatusCodes.UNAUTHORIZED, 'Username or password invalid');
+    }
+
     const { id, password, username } = userData[0];
     
     if (user.password !== password || user.username !== username) {

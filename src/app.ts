@@ -4,9 +4,9 @@ import ProductsController from './controllers/products.controller';
 import UsersController from './controllers/users.controller';
 import OrdersController from './controllers/orders.controller';
 import validationProduct from './middlewares/products.middleware';
-import validationUsers from './middlewares/users.middleware';
 import ErrorHandler from './interfaces/error.interface';
 import validationLogin from './middlewares/login.middleware';
+import verifyError from './middlewares/users.middleware';
 
 const app = express();
 
@@ -25,7 +25,7 @@ app.post(
 
 app.post(
   '/users',
-  validationUsers,
+  verifyError,
   usersController.create,
 );
 
