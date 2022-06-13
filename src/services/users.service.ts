@@ -29,9 +29,9 @@ class UserService {
       throw errorMessage(StatusCodes.UNAUTHORIZED, 'Username or password invalid');
     }
 
-    const { id, password, username } = userData[0];
+    const { id, password } = userData[0];
     
-    if (user.password !== password || user.username !== username) {
+    if (user.password !== password) {
       throw errorMessage(StatusCodes.UNAUTHORIZED, 'Username or password invalid');
     }
 
