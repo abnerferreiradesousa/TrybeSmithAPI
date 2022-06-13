@@ -29,4 +29,15 @@ export default class ProductModel {
       amount,
     };
   }
+
+  public async update(orderId: number, id: number): Promise<number> {
+    const result = await this.connection
+      .execute<ResultSetHeader>(
+      'UPDATE Trybesmith.Products SET orderId = ? WHERE id = ?',
+      [orderId, id],
+    );
+    const [rows] = result;
+    const { insertId } = rows;
+    return insertId;
+  }
 }

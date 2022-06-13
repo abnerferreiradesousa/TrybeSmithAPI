@@ -7,6 +7,8 @@ import validationProduct from './middlewares/products.middleware';
 import ErrorHandler from './interfaces/error.interface';
 import validationLogin from './middlewares/login.middleware';
 import verifyError from './middlewares/users.middleware';
+import authToken from './middlewares/auth.token.middleware';
+import validProductsIds from './middlewares/products.ids.middleware';
 
 const app = express();
 
@@ -17,6 +19,7 @@ const usersController = new UsersController();
 const ordersController = new OrdersController();
 
 app.get('/products', productsController.getAll);
+
 app.post(
   '/products', 
   validationProduct,
@@ -38,6 +41,13 @@ app.post(
   '/login',
   validationLogin,
   usersController.login,
+);
+
+app.post(
+  '/orders',
+  authToken,
+  validProductsIds,
+  ordersController.create,
 );
 
 app.use((err: ErrorHandler, _req: Request, res: Response, _next: NextFunction) => {

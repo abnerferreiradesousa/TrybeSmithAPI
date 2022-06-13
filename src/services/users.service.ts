@@ -35,7 +35,7 @@ class UserService {
       throw errorMessage(StatusCodes.UNAUTHORIZED, 'Username or password invalid');
     }
 
-    const token = generateToken({ ...user, id: Number(id) });
+    const token = generateToken({ username: user.username, id: Number(id) });
     return token;
   }
 }

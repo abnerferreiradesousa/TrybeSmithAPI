@@ -2,7 +2,6 @@ import { StatusCodes } from 'http-status-codes';
 import { Request, Response, NextFunction } from 'express';
 import Joi from 'joi';
 import errorMessage from '../utils/errorMessage';
-// import User from '../interfaces/user.interface';
 
 const schema = Joi.object({
   username: Joi.string().min(3).required(),
