@@ -22,13 +22,13 @@ class OrderService {
   public async create(
     id: number,
     productsIds: number[],
-  ): Promise<{ userId: number, products: number[] }> {
+  ): Promise<{ userId: number, productsIds: number[] }> {
     const insertId = await this.model.create(id);
     
     productsIds.map((productId) => this.productModel.update(insertId, productId));
     return {
       userId: id,
-      products: productsIds,
+      productsIds,
     };
   }
 }

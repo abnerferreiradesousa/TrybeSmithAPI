@@ -1,7 +1,6 @@
 import { Response, NextFunction } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import errorMessage from '../utils/errorMessage';
-// import { INVALID_TOKEN, TOKEN_NOT_FOUND } from '../utils/textErrorsMessagers';
 import MyRequest from '../interfaces/request.interface';
 
 const isValidType = (value: string | number, type: string) => {
