@@ -25,9 +25,9 @@
 
   1. Clone o repositório
 
-  - `git clone https://github.com/tryber/sd-017-project-trybesmith.git`.
+  - `git clone git@github.com:abnerferreiradesousa/trybesmith.git`.
   - Entre na pasta do repositório que você acabou de clonar:
-    - `cd sd-017-project-trybesmith`
+    - `cd trybesmith`
 
   2. Instale as dependências [**Caso existam**]
 
