@@ -2,25 +2,16 @@
 
 # Entregáveis
 
-  <summary><strong>👨‍💻 O que deverá ser desenvolvido</strong></summary><br />
+  <summary><strong>👨‍💻 O que foi desenvolvido</strong></summary><br />
 
-  Para este projeto, você vai criar uma loja de itens medievais, no formato de uma _API_, utilizando _Typescript_.
+  Para este projeto, criei uma loja de itens medievais, no formato de uma _API_, utilizando _Typescript_.
   
-  Você irá desenvolver todas as camadas da aplicação (_Models_, _Service_ e _Controllers_) em seu código e, por meio dessa aplicação, será possível realizar as operações básicas que se pode fazer em um determinado banco de dados:
+  Desenvolvi todas as camadas da aplicação (_Models_, _Service_ e _Controllers_) e, por meio dessa aplicação, é possível realizar as operações básicas que se pode fazer em um determinado banco de dados:
   Criação, Leitura, Atualização e Exclusão (ou `CRUD`, para as pessoas mais íntimas 😜 - _Create, Read, Update_ e _Delete_).
 
-  Você irá criar alguns _endpoints_ que irão ler e escrever em um banco de dados, utilizando o **MySQL**.
+  Criei alguns _endpoints_ que leem e escrevem em um banco de dados, utilizando o **MySQL**.
 
-  ---
-
-  O código para cadastro de pessoas usuárias deve ser criado por você utilizando os conhecimentos adquiridos nesse bloco.
-
-  ⚠️ **Dicas Importantes** ⚠️:
-
-  - Não haverá front-end neste projeto, portanto não se preocupe com a visualização, apenas com as funcionalidades e organização do código;
-
-  - Sua API deve ser desenvolvida dentro da pasta `./src`.
-</details>
+  --
 
 
   1. Clone o repositório
@@ -29,7 +20,7 @@
   - Entre na pasta do repositório que você acabou de clonar:
     - `cd trybesmith`
 
-  2. Instale as dependências [**Caso existam**]
+  2. Instale as dependências
 
   - `npm install`
 
