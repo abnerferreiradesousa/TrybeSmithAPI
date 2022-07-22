@@ -11,7 +11,6 @@
 
   Criei alguns _endpoints_ que leem e escrevem em um banco de dados, utilizando o **MySQL**.
 
-  --
 
 
   1. Clone o repositório
