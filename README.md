@@ -21,6 +21,10 @@
   2. Instale as dependências
 
   - `npm install`
+  
+  3. Rodando a aplicação
+
+  - `npm start`
 
 # Stacks
 
