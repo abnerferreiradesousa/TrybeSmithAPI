@@ -17,6 +17,7 @@
   - `git clone git@github.com:abnerferreiradesousa/trybesmith.git`.
   - Entre na pasta do repositório que você acabou de clonar:
     - `cd trybesmith`
+    - `docker-compose up -d --build`
 
   2. Instale as dependências
 
