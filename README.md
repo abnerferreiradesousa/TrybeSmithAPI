@@ -11,7 +11,12 @@
 
   Criei alguns _endpoints_ que leem e escrevem em um banco de dados, utilizando o **MySQL**.
 
+# Stacks
 
+- MySQL
+- TypeScript
+- Node.js
+- Express.js
 
   1. Clone o repositório
 
